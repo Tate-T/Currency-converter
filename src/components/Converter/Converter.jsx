@@ -15,6 +15,7 @@ const Converter = currency => {
         </div>
         <h2>Enter the amount:</h2>
         <input type="text" className={s.inputCurrency} />
+        <button className={s.currencyBtn}>Count</button>
         {/* <select name="currency_1" className={s.inputFirst}>
         <option value="1">UAH</option>
         <option value="2">USD</option>

@@ -33,3 +33,12 @@
     color: rgb(103, 145, 20);
     font-style: italic;
 }
+
+.currencyBtn {
+    margin-left: 30px;
+    padding: 5px 15px;
+    background-color:rgb(146, 167, 104);
+    color: rgb(249, 249, 218);
+    border-radius: 10%;
+    border: 1px solid rgb(85, 85, 22);
+}
