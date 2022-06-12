@@ -1,16 +1,35 @@
 .currencyForm {
-    padding-top: 50px;
+    padding-top: 80px;
+}
+
+.inputStyles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(85, 85, 22);
+}
+
+.marginInput {
+    margin-right: 50px;
+    display: flex;
+    align-items: center;
 }
 
 .inputCurrency {
     width: 60px;
-}
-
-.inputFirst {
-    content: inherit;
-    margin-right: 50px;
+    height: 20px;
+    margin-left: 30px;
 }
 
 .currencyResult {
-    margin-top: 100px;
+    margin-top: 80px;
+    font-size: 30px;
+    color:rgb(133, 179, 41);
+    text-shadow: 3px 1px rgb(198, 220, 154);
+}
+
+.currencyResultSum {
+    margin-left: 20px;
+    color: rgb(103, 145, 20);
+    font-style: italic;
 }
