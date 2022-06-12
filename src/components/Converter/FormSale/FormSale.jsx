@@ -12,7 +12,7 @@ const FormSale = () => {
   };
 
   const getAmountSale = () => {
-    setcurrencyResult(currencySum / rates[1].sale);
+    setcurrencyResult(currencySum / rates[0].sale);
   };
 
   const onSubmit = e => {
@@ -27,10 +27,10 @@ const FormSale = () => {
             <h2>Select type of currency for SALE:</h2>
             <select className={s.inputCurrency}>
               <option value="1" className={s.option}>
-                EUR
+                USD
               </option>
               <option value="2" className={s.option}>
-                USD
+                EUR
               </option>
             </select>
           </div>
@@ -48,9 +48,9 @@ const FormSale = () => {
           </button>
         </div>
         <p className={s.currencyResult}>
-          Amount in EUR:
+          Amount in USD:
           <span className={s.currencyResultSum}>
-            {currencyResult.toFixed(2) + 'EUR'}
+            {currencyResult.toFixed(2)} &#x24;
           </span>
         </p>
       </div>
