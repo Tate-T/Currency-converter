@@ -1,11 +1,6 @@
 .title {
     color:rgb(133, 179, 41);
     text-shadow: 3px 1px rgb(198, 220, 154);
-    
-}
-
-.titleTransition-enter {
-opacity: 0;
 }
 
 .rateDicribe {

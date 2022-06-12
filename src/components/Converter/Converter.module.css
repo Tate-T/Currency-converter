@@ -1,5 +1,10 @@
 .currencyForm {
-    padding-top: 80px;
+    padding-top: 20px;
+}
+
+.currency {
+    border: 1px solid rgb(85, 85, 22);
+    margin-top: 10px;
 }
 
 .inputStyles {
@@ -9,7 +14,7 @@
     color: rgb(85, 85, 22);
 }
 
-.marginInput {
+.currencyBuyText {
     margin-right: 50px;
     display: flex;
     align-items: center;
@@ -23,7 +28,7 @@
 }
 
 .currencyResult {
-    margin-top: 80px;
+    margin-top: 20px;
     font-size: 30px;
     color:rgb(133, 179, 41);
     text-shadow: 3px 1px rgb(198, 220, 154);
