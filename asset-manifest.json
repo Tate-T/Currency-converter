@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Tate-T/Currency-converter-React/static/css/main.59b67487.css",
-    "main.js": "/Tate-T/Currency-converter-React/static/js/main.dcc52d28.js",
+    "main.css": "/Tate-T/Currency-converter-React/static/css/main.3cc9fb0c.css",
+    "main.js": "/Tate-T/Currency-converter-React/static/js/main.3f3fc114.js",
     "index.html": "/Tate-T/Currency-converter-React/index.html",
-    "main.59b67487.css.map": "/Tate-T/Currency-converter-React/static/css/main.59b67487.css.map",
-    "main.dcc52d28.js.map": "/Tate-T/Currency-converter-React/static/js/main.dcc52d28.js.map"
+    "main.3cc9fb0c.css.map": "/Tate-T/Currency-converter-React/static/css/main.3cc9fb0c.css.map",
+    "main.3f3fc114.js.map": "/Tate-T/Currency-converter-React/static/js/main.3f3fc114.js.map"
   },
   "entrypoints": [
-    "static/css/main.59b67487.css",
-    "static/js/main.dcc52d28.js"
+    "static/css/main.3cc9fb0c.css",
+    "static/js/main.3f3fc114.js"
   ]
 }
