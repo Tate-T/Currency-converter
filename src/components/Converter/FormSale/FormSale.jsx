@@ -5,14 +5,29 @@ import React, { useState } from 'react';
 const FormSale = () => {
   const [currencySum, setcurrencySum] = useState('');
   const [currencyResult, setcurrencyResult] = useState(0);
+  const [selectValue, setSelectValue] = useState('USD');
 
   const handleInputChange = e => {
     const { value } = e.currentTarget;
     setcurrencySum(value);
   };
 
+  const onChangeSelect = e => {
+    const { value } = e.currentTarget;
+    setSelectValue(value);
+  };
+
   const getAmountSale = () => {
-    setcurrencyResult(currencySum / rates[0].sale);
+    switch (selectValue) {
+      case 'USD':
+        setcurrencyResult(currencySum / rates[0].sale);
+        break;
+      case 'EUR':
+        setcurrencyResult(currencySum / rates[1].sale);
+        break;
+      default:
+        return;
+    }
   };
 
   const onSubmit = e => {
@@ -20,18 +35,14 @@ const FormSale = () => {
     getAmountSale();
   };
   return (
-    <form onClick={onSubmit}>
+    <form onSubmit={onSubmit}>
       <div className={s.currency}>
         <div className={s.inputStyles}>
           <div className={s.currencyBuyText}>
             <h2>Select type of currency for SALE:</h2>
-            <select className={s.inputCurrency}>
-              <option value="1" className={s.option}>
-                USD
-              </option>
-              <option value="2" className={s.option}>
-                EUR
-              </option>
+            <select className={s.inputCurrency} onChange={onChangeSelect}>
+              <option value="USD">USD</option>
+              <option value="EUR">EUR</option>
             </select>
           </div>
           <h2>Enter the amount:</h2>

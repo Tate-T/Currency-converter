@@ -5,25 +5,29 @@ import React, { useState } from 'react';
 const FormBuy = () => {
   const [currencySum, setcurrencySum] = useState('');
   const [currencyResult, setcurrencyResult] = useState(0);
+  const [selectValue, setSelectValue] = useState('USD');
 
   const handleInputChange = e => {
     const { value } = e.currentTarget;
     setcurrencySum(value);
   };
 
+  const onChangeSelect = e => {
+    const { value } = e.currentTarget;
+    setSelectValue(value);
+  };
+
   const getAmountBuy = () => {
-    // const option = document.querySelector('.option');
-    // switch (option.getAttribute('value')) {
-    //   case '1':
-    //     setcurrencyResult(rates[1].buy * currencySum);
-    //     break;
-    //   case '2':
-    //     setcurrencyResult(rates[0].buy * currencySum);
-    //     break;
-    //   default:
-    //     return;
-    // }
-    setcurrencyResult(rates[0].sale * currencySum);
+    switch (selectValue) {
+      case 'USD':
+        setcurrencyResult(rates[0].sale * currencySum);
+        break;
+      case 'EUR':
+        setcurrencyResult(rates[1].sale * currencySum);
+        break;
+      default:
+        return;
+    }
   };
 
   const onSubmit = e => {
@@ -31,18 +35,14 @@ const FormBuy = () => {
     getAmountBuy();
   };
   return (
-    <form onClick={onSubmit}>
+    <form onSubmit={onSubmit}>
       <div className={s.currency}>
         <div className={s.inputStyles}>
           <div className={s.currencyBuyText}>
             <h2>Select type of currency for BUY:</h2>
-            <select className={s.inputCurrency}>
-              <option value="1" className={s.option}>
-                USD
-              </option>
-              <option value="2" className={s.option}>
-                EUR
-              </option>
+            <select className={s.inputCurrency} onChange={onChangeSelect}>
+              <option value="USD">USD</option>
+              <option value="EUR">EUR</option>
             </select>
           </div>
           <h2>Enter the amount:</h2>
