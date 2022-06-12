@@ -4,40 +4,59 @@ import rates from '../../data.json';
 
 const Converter = () => {
   const [currencySum, setcurrencySum] = useState('');
-
-  const getAmount = () => {
-    console.log('a');
-  };
+  const [currencyResult, setcurrencyResult] = useState(0);
 
   const handleInputChange = e => {
     const { value } = e.currentTarget;
     setcurrencySum(value);
   };
 
+  const getAmount = () => {
+    // const option = document.querySelector('.option');
+    // switch (option.getAttribute('value')) {
+    //   case '1':
+    //     setcurrencyResult(rates[1].buy * currencySum);
+    //     break;
+    //   case '2':
+    //     setcurrencyResult(rates[0].buy * currencySum);
+    //     break;
+    //   default:
+    //     return;
+    // }
+    setcurrencyResult(rates[0].buy * currencySum);
+  };
+
   const onSubmit = e => {
     e.preventDefault();
+    getAmount();
   };
 
   return (
     <form className={s.currencyForm} onClick={onSubmit}>
       <div className={s.inputStyles}>
         <div className={s.marginInput}>
-          <h2>Select type of currency:</h2>
-          <select name="currency_2" className={s.inputCurrency}>
-            {/* <option value="1">UAH</option> */}
-            <option value="2">EUR</option>
-            <option value="3">USD</option>
+          <h2>Select type of currency for SALE:</h2>
+          <select className={s.inputCurrency}>
+            <option value="1" className={s.option}>
+              EUR
+            </option>
+            <option value="2" className={s.option}>
+              USD
+            </option>
           </select>
         </div>
         <h2>Enter the amount:</h2>
         <input
           type="text"
+          placeholder="enter a sum"
           className={s.inputCurrency}
           name="currencySum"
           value={currencySum}
           onChange={handleInputChange}
         />
-        <button className={s.currencyBtn}>Count</button>
+        <button className={s.currencyBtn} type="submit">
+          Count
+        </button>
         {/* <select name="currency_1" className={s.inputFirst}>
         <option value="1">UAH</option>
         <option value="2">USD</option>
@@ -49,7 +68,8 @@ const Converter = () => {
       <select type="text"></select> */}
       </div>
       <p className={s.currencyResult}>
-        Amount in UAH: <span className={s.currencyResultSum}>0 &#8372;</span>
+        Amount in UAH:{' '}
+        <span className={s.currencyResultSum}>{currencyResult} &#8372;</span>
       </p>
     </form>
   );

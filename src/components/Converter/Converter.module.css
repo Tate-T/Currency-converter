@@ -16,7 +16,8 @@
 }
 
 .inputCurrency {
-    width: 60px;
+    text-align: center;
+    width: 90px;
     height: 20px;
     margin-left: 30px;
 }
