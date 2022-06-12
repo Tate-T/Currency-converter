@@ -1,0 +1,25 @@
+.title {
+    color:rgb(133, 179, 41);
+    text-shadow: 3px 1px rgb(198, 220, 154);
+    
+}
+
+.titleTransition-enter {
+opacity: 0;
+}
+
+.rateDicribe {
+color: darkolivegreen;
+font-style: oblique;
+}
+
+.rate {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.rateType {
+    margin-left: 30px;
+    font-style: italic;
+}
