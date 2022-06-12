@@ -1,0 +1,16 @@
+.currencyForm {
+    padding-top: 50px;
+}
+
+.inputCurrency {
+    width: 60px;
+}
+
+.inputFirst {
+    content: inherit;
+    margin-right: 50px;
+}
+
+.currencyResult {
+    margin-top: 100px;
+}
