@@ -48,9 +48,9 @@ const FormSale = () => {
           </button>
         </div>
         <p className={s.currencyResult}>
-          Amount in currency:
+          Amount in EUR:
           <span className={s.currencyResultSum}>
-            {currencyResult.toFixed(2)}
+            {currencyResult.toFixed(2) + 'EUR'}
           </span>
         </p>
       </div>
