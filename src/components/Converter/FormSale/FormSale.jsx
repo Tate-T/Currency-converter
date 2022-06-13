@@ -6,6 +6,7 @@ const FormSale = () => {
   const [currencySum, setcurrencySum] = useState('');
   const [currencyResult, setcurrencyResult] = useState(0);
   const selectValue = useRef('USD');
+  const [currencyType, setcurrencyType] = useState('');
 
   const handleInputChange = e => {
     const { value } = e.currentTarget;
@@ -16,19 +17,30 @@ const FormSale = () => {
     switch (selectValue.current.value) {
       case 'USD':
         setcurrencyResult(currencySum / rates[0].sale);
+        setcurrencyType(rates[0].ccy);
         break;
       case 'EUR':
         setcurrencyResult(currencySum / rates[1].sale);
+        setcurrencyType(rates[1].ccy);
         break;
       default:
         return;
     }
   };
 
+  // const onResultSaleRender = () => {
+  //   if (selectValue.current.value === rates[0].ccy) {
+  //     return rates[0].ccy;
+  //   } else if (selectValue.current.value !== rates[1].ccy) {
+  //     return rates[1].ccy;
+  //   }
+  // };
+
   const onSubmit = e => {
     e.preventDefault();
     getAmountSale();
   };
+
   return (
     <form onSubmit={onSubmit}>
       <div className={s.currency}>
@@ -54,9 +66,9 @@ const FormSale = () => {
           </button>
         </div>
         <p className={s.currencyResult}>
-          Amount in USD:
+          Amount in {currencyType}:
           <span className={s.currencyResultSum}>
-            {currencyResult.toFixed(2)} &#x24;
+            {currencyResult.toFixed(2)} {currencyType}
           </span>
         </p>
       </div>
