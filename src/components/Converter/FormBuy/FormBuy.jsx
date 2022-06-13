@@ -1,24 +1,19 @@
 import s from '../Converter.module.css';
 import rates from '../../../data.json';
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 const FormBuy = () => {
   const [currencySum, setcurrencySum] = useState('');
   const [currencyResult, setcurrencyResult] = useState(0);
-  const [selectValue, setSelectValue] = useState('USD');
+  const selectValue = useRef('USD');
 
   const handleInputChange = e => {
     const { value } = e.currentTarget;
     setcurrencySum(value);
   };
 
-  const onChangeSelect = e => {
-    const { value } = e.currentTarget;
-    setSelectValue(value);
-  };
-
   const getAmountBuy = () => {
-    switch (selectValue) {
+    switch (selectValue.current.value) {
       case 'USD':
         setcurrencyResult(rates[0].sale * currencySum);
         break;
@@ -40,7 +35,7 @@ const FormBuy = () => {
         <div className={s.inputStyles}>
           <div className={s.currencyBuyText}>
             <h2>Select type of currency for BUY:</h2>
-            <select className={s.inputCurrency} onChange={onChangeSelect}>
+            <select className={s.inputCurrency} ref={selectValue}>
               <option value="USD">USD</option>
               <option value="EUR">EUR</option>
             </select>
