@@ -28,14 +28,6 @@ const FormSale = () => {
     }
   };
 
-  // const onResultSaleRender = () => {
-  //   if (selectValue.current.value === rates[0].ccy) {
-  //     return rates[0].ccy;
-  //   } else if (selectValue.current.value !== rates[1].ccy) {
-  //     return rates[1].ccy;
-  //   }
-  // };
-
   const onSubmit = e => {
     e.preventDefault();
     getAmountSale();
